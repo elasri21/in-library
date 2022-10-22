@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+:root {
+    --header-bg: #f2f2f2;
+    --blue-c: #2799b1;
+    --strong-blue: #238a9f;
+    --soft-green: #d5e76c;
+    --green: #cde24f;
+    --title-c: #111;/*text color*/
+    --footer-bg: #333333;
+    --default-c: #333;
+    --bg-f2: #f2f2f2;
+    --main-bg: #f2f2f2;
+    --grey-c: grey;
+}
+/* global rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+ul {
+    margin: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+body {
+    background-color: var(--header-bg);
+    font-family: 'Roboto', sans-serif;
+}
+@media (min-width: 922px) {
+    .container {
+        margin-left: 100px !important;
+        margin-right: 100px !important;
+    }
+}
+.container {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+/* start header */
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 111;
+    height: 74px;
+}
+@media (max-width: 767px) {
+    header nav {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background-color: var(--title-c);
+        padding: 30px;
+    }
+    header nav ul {
+        flex-direction: column;
+    }
+    header nav ul li {
+        flex-basis: 100%;
+    }
+    header nav ul li a {
+        color: white !important;
+    }
+    header nav .close {
+        display: block !important;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+header nav ul li a {
+    color: var(--footer-bg);
+}
+header nav ul li a:hover {
+    opacity: .75;
+}
+header nav .close {
+    color: white;
+    display: none;
+}
+@media (max-width: 767px) {
+    header .open {
+        display: block !important;
+    }
+}
+header .open {
+    display: none;
+}
+/* end header */
+/* start landing */
+.landing {
+    height: calc(100vh - 74px);
+    background-image: url("../images/landing-bg.jpg");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.landing .container h1, 
+.landing .container p{
+    max-width: 300px;
+}
+.landing .container a:hover {
+    background-color: var(--green);
+    color: var(--strong-blue);
+}
+/* end landing */
+
+/* start in-library */
+.in-library::before {
+    content: "";
+    position: absolute;
+    height: 130px;
+    width: 100%;
+    left: 0;
+    top: 150px;
+    background: linear-gradient(to right, var(--green), var(--blue-c));
+}
+@media (max-width: 767px) {
+    .in-library .container {
+        flex-direction: column;
+    }
+    .in-library .container > div {
+        width: 100% !important;
+    }
+}
+.in-library .container > div {
+    width: calc(50% - 30px);
+}
+.in-library .container .image {
+    height: 500px;
+}
+.in-library .container .image img {
+    max-height: 100%;
+}
+.in-library .container a:hover {
+    background-color: var(--green);
+    color: var(--strong-blue);
+}
+.in-library .container h2, 
+.in-library .container p {
+    max-width: 400px;
+}
+/* end in-library */
+
+/* start grid box */
+.grid-box {
+    background: linear-gradient(to right, var(--strong-blue), var(--soft-green));
+}
+.grid-box .container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+/* end grid box */
+
+/* start bull-box  */
+.bull-box  .container .bull {
+    background: linear-gradient(to right, var(--strong-blue), var(--soft-green));
+}
+/* end bull-box  */
+
+/* start good-things  */
+.good-things .container .image::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--strong-blue), var(--soft-green));
+    left: -75px;
+    top: 50px;
+}
+.good-things .container .empty {
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.good-things .container .image,
+.good-things .container .text {
+    max-width: 400px;
+}
+@media (max-width: 767px) {
+    .good-things .container .image {
+        margin-left: 50px !important;
+    }
+}
+@media (max-width: 580px) {
+    .good-things .container .image {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+}
+.good-things .container .image {
+    margin-left: 150px;
+}
+@media (max-width: 767px) {
+    .good-things .container .text {
+        margin-left: 100px !important;
+        margin-top: 20px !important;
+    }
+}
+@media (max-width: 580px) {
+    .good-things .container .text {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 20px !important;
+    }
+}
+.good-things .container .text {
+    margin-left: 250px;
+    margin-top: -150px;
+}
+
+.good-things .container .text-container .text {
+    max-width: 400px;
+}
+.good-things .container .text a:hover {
+    background-color: var(--green);
+    color: var(--strong-blue);
+}
+/* end good-things  */
+
+/* start principals */
+.principals .boxes {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+/* end principals */
+
+/* start learning-path */
+@media (max-width: 921px) {
+    .learning-path {
+        margin-top: 150px !important;
+    }
+}
+.learning-path {
+    margin-top: 200px;
+}
+.learning-path::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 60%;
+    background: linear-gradient(to bottom, var(--strong-blue), var(--soft-green));
+}
+@media (max-width: 921px) {
+    .learning-path .text {
+        position: relative !important;
+        top: calc(100% - 80px) !important;
+        left: 30px !important;
+    }
+}
+@media (max-width: 500px) {
+    .learning-path .text {
+        left: 0 !important;
+        border-radius: 0 0 10px 10px !important
+    }
+}
+.learning-path .image {
+    max-width: 400px;
+    margin-top: -120px;
+}
+.learning-path .text {
+    width: 100%;
+    position: absolute;
+    left: calc(100% - 80px);
+    top: -150px;
+}
+.learning-path .container a:hover {
+    background-color: var(--green);
+    color: var(--strong-blue);
+}
+@media (min-width: 922px) {
+    .learning-path .paths {
+        margin-top: -120px;
+    }
+}
+@media (max-width: 767px) {
+    .learning-path .paths {
+        width: 100% !important;
+    }
+}
+.learning-path .paths {
+    width: 80%;
+    margin-left: auto;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+/* end learning-path */
+
+/* start online-learning */
+@media (max-width: 921px) {
+    .online-learning .container > div {
+        width: 100% !important;
+    }
+}
+.online-learning .container > div {
+    width: calc(33% - 20px);
+}
+.online-learning .learning a:hover {
+    background-color: var(--green);
+    color: var(--strong-blue);
+}
+@media (min-width: 922px) {
+    .online-learning .quote {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .online-learning .quote p {
+        width: 100%;
+    }
+}
+.online-learning .image::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, var(--strong-blue), var(--soft-green));
+    height: 200px;
+}
+.online-learning .image img {
+    width: 90%;
+    height: 100%;
+}
+/* end online-learning */
+/* start contact-us */
+@media (max-width: 767px) {
+    .contact-us .container {
+        flex-direction: column;
+    }
+    .contact-us .container form {
+        width: 100% !important;
+    }
+    .contact-us .container .text {
+        width: 100% !important;
+    }
+}
+.contact-us .container form {
+    width: calc(60% - 30px);
+}
+.contact-us .container .text {
+    width: 40%;
+}
+.contact-us form textarea {
+    resize: none;
+    height: 150px;
+}
+.contact-us form .submit:hover {
+    background-color: var(--green);
+    color: var(--strong-blue);
+}
+/* end contact-us */
+
+/* start footer */
+footer .text {
+    max-width: 500px;
+}
+footer a:hover {
+    color: var(--blue-c);
+    text-decoration: underline;
+}
+/* end footer */
